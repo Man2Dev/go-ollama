@@ -9,5 +9,12 @@ Group=ollama
 Restart=always
 RestartSec=3
 
+# testing restricting the service
+Type=simple
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+NoNewPrivileges=true
+
 [Install]
 WantedBy=default.target
