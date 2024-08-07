@@ -72,6 +72,14 @@ with xdg portals
 https://github.com/ollama/ollama/pull/897
 https://github.com/ollama/ollama/issues/228
 
+## support x86_64_{1,2,3,4} cpu generations on llama-cpp
+# this may help with quantization
+https://github.com/ggerganov/llama.cpp/pull/8713
+# mailing list with useful info:
+https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/
+# important conclusions:
+1. dnf does support building for multiple cpu generation through --target x86_64_v?
+2. some changes needed to llama-cpp spec
 
 ## idea
 - the systemd service will be isolated to `ollama` wheel group with out breaking functionality (read permission neads to be keapt).
