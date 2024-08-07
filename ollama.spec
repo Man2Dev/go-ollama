@@ -1,8 +1,11 @@
 # This specfile is licensed under:
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+# https://github.com/ollama/ollama
+%global	goipath	github.com/ollama/ollama
+
 Name:           ollama
-Version:        
+Version:        0.3.4
 Release:        1%{?dist}
 Summary:        
 
