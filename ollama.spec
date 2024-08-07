@@ -10,6 +10,7 @@ License:
 URL:            
 Source0:        
 
+BuildRequires:	systemd-rpm-macros
 BuildRequires:  
 Requires:       
 
