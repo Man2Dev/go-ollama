@@ -5,6 +5,7 @@
 
 # https://github.com/ollama/ollama
 %global	goipath	github.com/ollama/ollama
+Version:        0.3.4
 
 %gometa
 
@@ -12,7 +13,6 @@
 Get up and running with Llama, Mistral, Gemma, and other large language models}
 
 Name:           ollama
-Version:        0.3.4
 Release:        1%{?dist}
 Summary:        Running many types of LLMs locally
 
