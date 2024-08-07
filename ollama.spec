@@ -1,45 +1,48 @@
 # This specfile is licensed under:
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+%bcond_without check
+
 # https://github.com/ollama/ollama
 %global	goipath	github.com/ollama/ollama
+
+%global common_description %{expand:
+Get up and running with Llama, Mistral, Gemma, and other large language models}
 
 Name:           ollama
 Version:        0.3.4
 Release:        1%{?dist}
-Summary:        
+Summary:        Running many types of LLMs locally
 
-License:        
-URL:            
-Source0:        
+License:        MIT
+URL:            %{gourl}
+Source0:        %{gosource}
 
-BuildRequires:	systemd-rpm-macros
-BuildRequires:	go-rpm-macros
 BuildRequires:	golang 
+BuildRequires:	go-rpm-macros
+BuildRequires:	systemd-rpm-macros
 Requires:       
 
-%description
+%description %{common_description}
 
+%gopkg
 
 %prep
-%autosetup
+%goprep
 
-
-%build
-%configure
-%make_build
-
+%generate_buildrequires
+%go_generate_buildrequires
 
 %install
-%make_install
+%gopkginstall
 
+	
+%if %{with check}	
+%check
+%gocheck	
+%endif
 
-%files
-%license add-license-file-here
-%doc add-docs-here
-
-
+%gopkgfiles
 
 %changelog
-* Wed Aug 07 2024 Mohammadreza Hendiani <man2dev@fedoraproject.org>
-- 
+%autochangelog
