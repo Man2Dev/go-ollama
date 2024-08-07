@@ -12,7 +12,7 @@ Source0:
 
 BuildRequires:	systemd-rpm-macros
 BuildRequires:	go-rpm-macros
-BuildRequires:  
+BuildRequires:	golang 
 Requires:       
 
 %description
