@@ -6,6 +6,8 @@
 # https://github.com/ollama/ollama
 %global	goipath	github.com/ollama/ollama
 
+%gometa
+
 %global common_description %{expand:
 Get up and running with Llama, Mistral, Gemma, and other large language models}
 
