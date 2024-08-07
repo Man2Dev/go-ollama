@@ -92,6 +92,10 @@ find problems with
 [] `controlD64`
 [] `vulkan/icd.d/nvidia_layers.json`
 
+## patchs
+ollama has its own patches for llama-cpp:
+https://github.com/ollama/ollama/tree/main/llm/patches
+
 ## idea
 - the systemd service will be isolated to `ollama` wheel group with out breaking functionality (read permission neads to be keapt).
 
