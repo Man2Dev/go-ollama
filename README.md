@@ -1,5 +1,8 @@
 # ollama packaging for fedora
 
+## should ollama's registry be patched out?
+https://registry.ollama.ai/v2/library/{model}/manifests/latest
+
 ## dependencies needed for project
 https://github.com/spf13/cobra
 ### go.md packages
