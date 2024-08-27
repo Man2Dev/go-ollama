@@ -1,5 +1,8 @@
 # ollama packaging for fedora
 
+## build locally
+in the v0.3.6 build of ollama relies on a .so file that is linked in /lib however in Fedora x86_64 libraries usually are in /lib64 as such need to be recompiled as to run on fedora 
+
 ## should ollama's registry be patched out?
 https://registry.ollama.ai/v2/library/{model}/manifests/latest
 
