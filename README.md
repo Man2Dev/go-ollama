@@ -1,7 +1,38 @@
 # ollama packaging for fedora
 
 ## build locally
-in the v0.3.6 build of ollama relies on a .so file that is linked in /lib however in Fedora x86_64 libraries usually are in /lib64 as such need to be recompiled as to run on fedora 
+in the v0.3.6 build of ollama relies on a .so file that is linked in /lib however in Fedora x86_64 libraries usually are in /lib64 as such need to be recompiled as to run on fedora.
+
+**Build documentation in:**
+```
+https://github.com/ollama/ollama/tree/main/docs/development.md
+```
+
+**Build**
+```bash
+git clone --recurse-submodules git@github.com:ollama/ollama.git
+cd ollama
+go generate ./...
+go build .
+```
+
+### Note: I will not be doing a cuda build for fedora this are just general instructions
+**Cuda:**
+# check what cuda aversion you have:
+can be checked with `nvidia-smi`
+or this script that should output your cuda version:
+```bash
+nvidia-smi -q | awk '$0 ~ /CUDA Version[^\n]*/ {print $4}'
+```
+
+you can find full list of nvida container on:
+**regestry:**
+https://hub.docker.com/r/nvidia/cuda/tags
+https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda
+**git repo:**
+https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
+
+* then build with `nvidia-container-toolkit` 
 
 ## should ollama's registry be patched out?
 https://registry.ollama.ai/v2/library/{model}/manifests/latest
