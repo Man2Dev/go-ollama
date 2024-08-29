@@ -1,0 +1,22 @@
+[Unit]
+Description=Ollama service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/ollama serve
+User=ollama
+Group=ollama
+Restart=always
+RestartSec=3
+
+# testing restricting the service
+Type=simple
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+NoNewPrivileges=true
+# https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#private
+PrivateDevices=yes
+
+[Install]
+WantedBy=default.target
