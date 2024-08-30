@@ -138,16 +138,17 @@ ask Tom
 
 > still in development in llama.cpp
 
-[] `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` with `environment.d`
-find problems with 
+- `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` with `environment.d`
 
-[] `libnvidia-vulkan-producer.so`
+find problems with:
 
-[] `libnvidia-allocator.so`
+- `libnvidia-vulkan-producer.so`
 
-[] `controlD64`
+- `libnvidia-allocator.so`
 
-[] `vulkan/icd.d/nvidia_layers.json`
+- `controlD64`
+
+- `vulkan/icd.d/nvidia_layers.json`
 
 ## patchs
 ollama has its own patches for llama-cpp:
