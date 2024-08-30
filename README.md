@@ -110,23 +110,28 @@ https://github.com/ollama/ollama/pull/897
 https://github.com/ollama/ollama/issues/228
 
 ## support x86_64_{1,2,3,4} cpu generations on llama-cpp
-# this may help with quantization
-https://github.com/ggerganov/llama.cpp/pull/8713
-### mailing list with useful info:
+**mailing list with useful info:**
 https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/
-### important conclusions:
+**this may help with quantization**
+https://github.com/ggerganov/llama.cpp/pull/8713
+**important conclusions:**
 1. dnf does support building for multiple cpu generation through --target x86_64_v?
 2. some changes needed to llama-cpp spec
 
 ## Hardware Acceleration:
-### Rcom:
+**Rcom:**
 ask Tom
-### Vulkan:
+
+**Vulkan:**
 [] `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` with `environment.d`
 find problems with 
+
 [] `libnvidia-vulkan-producer.so`
+
 [] `libnvidia-allocator.so`
+
 [] `controlD64`
+
 [] `vulkan/icd.d/nvidia_layers.json`
 
 ## patchs
