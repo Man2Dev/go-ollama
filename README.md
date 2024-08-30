@@ -123,6 +123,9 @@ https://github.com/ggerganov/llama.cpp/pull/8713
 ask Tom
 
 **Vulkan:**
+
+__in development in llama.cpp__
+
 [] `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` with `environment.d`
 find problems with 
 
