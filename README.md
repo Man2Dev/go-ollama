@@ -16,9 +16,11 @@ go generate ./...
 go build .
 ```
 
-## Cuda:**
+## Cuda:
 **Note: I will not be doing a cuda build for fedora this are just general instructions**
+
 **check what cuda aversion you have:**
+
 can be checked with `nvidia-smi`
 or this script that should output your cuda version:
 ```bash
