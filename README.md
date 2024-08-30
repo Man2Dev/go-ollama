@@ -26,10 +26,15 @@ nvidia-smi -q | awk '$0 ~ /CUDA Version[^\n]*/ {print $4}'
 ```
 
 you can find full list of nvida container on:
+
 **regestry:**
+
 https://hub.docker.com/r/nvidia/cuda/tags
+
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda
+
 **git repo:**
+
 https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 
 * then build with `nvidia-container-toolkit` 
@@ -106,25 +111,32 @@ https://github.com/spf13/cobra
 
 ## how to address model location:
 with xdg portals
+
 https://github.com/ollama/ollama/pull/897
+
 https://github.com/ollama/ollama/issues/228
 
 ## support x86_64_{1,2,3,4} cpu generations on llama-cpp
 **mailing list with useful info:**
+
 https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/
+
 **this may help with quantization**
+
 https://github.com/ggerganov/llama.cpp/pull/8713
+
 **important conclusions:**
 1. dnf does support building for multiple cpu generation through --target x86_64_v?
 2. some changes needed to llama-cpp spec
 
 ## Hardware Acceleration:
 **Rcom:**
+
 ask Tom
 
 **Vulkan:**
 
-__in development in llama.cpp__
+> still in development in llama.cpp
 
 [] `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` with `environment.d`
 find problems with 
