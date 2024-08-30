@@ -8,7 +8,7 @@ in the v0.3.6 build of ollama relies on a .so file that is linked in /lib howeve
 https://github.com/ollama/ollama/tree/main/docs/development.md
 ```
 
-**Build**
+**Build:**
 ```bash
 git clone --recurse-submodules git@github.com:ollama/ollama.git
 cd ollama
