@@ -35,6 +35,10 @@ https://hub.docker.com/r/nvidia/cuda/tags
 
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda
 
+**ollama docker images**
+
+https://hub.docker.com/r/ollama/ollama
+
 **git repo:**
 
 https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
