@@ -8,13 +8,35 @@ in the v0.3.6 build of ollama relies on a .so file that is linked in /lib howeve
 https://github.com/ollama/ollama/tree/main/docs/development.md
 ```
 
-**Build:**
+1. **build:**
 ```bash
 git clone --recurse-submodules git@github.com:ollama/ollama.git
 cd ollama
 go generate ./...
 go build .
 ```
+
+2. **manual install:**
+> Note: assumed that developer is inside local ollama folder.
+```bash
+# based of https://github.com/ollama/ollama/blob/main/docs/linux.md
+
+# make ollama user
+sudo useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
+sudo usermod -a -G ollama $(whoami)
+
+#  write Ollama service
+sudo echo -e '[Unit]\nDescription=Ollama service\nAfter=network-online.target\n\n[Service]\nExecStart=/usr/bin/ollama serve\nUser=ollama\nGroup=ollama\nRestart=on-failure\nRestartSec=3\n\Environment="PATH=$PATH"n[Install]\nWantedBy=multi-user.target' > /etc/systemd/system/ollama.service
+
+# enable and star start service
+sudo systemctl daemon-reload
+sudo systemctl enable ollama
+sudo systemctl start ollama
+
+TODO
+
+```
+
 
 ## Cuda:
 **Note: I will not be doing a cuda build for fedora this are just general instructions**
@@ -166,9 +188,11 @@ https://github.com/ollama/ollama/tree/main/llm/patches
 ## idea
 - the systemd service will be isolated to `ollama` wheel group with out breaking functionality (read permission neads to be keapt).
 
-    gidelines: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups    
+    Note:       Check out `rpmconf`
 
-    systemd: https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
+    gidelines:  https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups    
+
+    systemd:    https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
 
 - store models in `%_sharedstatedir/ollama` instead of `/usr/share/ollama/` (the direcory will also be isolate to the whealgroup).
 
