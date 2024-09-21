@@ -166,6 +166,9 @@ ask Tom
 
 > still in development in llama.cpp
 
+** update: May have discovered and reported something potentially useful regarding Vulkan issues.**
+- `https://bugzilla.redhat.com/show_bug.cgi?id=2314042`
+
 - `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` with `environment.d`
 
 find problems with:
