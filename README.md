@@ -169,7 +169,11 @@ ask Tom
 ** update: May have discovered and reported something potentially useful regarding Vulkan issues.**
 - `https://bugzilla.redhat.com/show_bug.cgi?id=2314042`
 
-- `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` with `environment.d`
+- `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` 
+    + with `environment.d`
+    + `https://www.man7.org/linux/man-pages/man5/environment.d.5.html`
+- or with `setenv`
+    + https://man7.org/linux/man-pages/man3/setenv.3.html
 
 find problems with:
 
