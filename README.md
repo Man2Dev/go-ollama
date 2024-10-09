@@ -205,6 +205,8 @@ https://github.com/ollama/ollama/tree/main/llm/patches
 `http://0.0.0.0` `https://0.0.0.0` `http://0.0.0.0:*` `https://0.0.0.0:*`
 
 ## idea
+- use cmake how to link with lamma-cpp fedora packages
+
 - the systemd service will be isolated to `ollama` wheel group with out breaking functionality (read permission neads to be keapt).
 
     Note:       Check out `rpmconf`
