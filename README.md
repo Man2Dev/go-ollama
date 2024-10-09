@@ -165,6 +165,10 @@ https://github.com/ggerganov/llama.cpp/pull/8713
 1. dnf does support building for multiple cpu generation through --target x86_64_v?
 2. some changes needed to llama-cpp spec
 
+**Ollama builds thenm in differnt directories**
+`ollama/llm/build/linux/amd64/`
+
+
 ## Hardware Acceleration:
 **Rcom:**
 
