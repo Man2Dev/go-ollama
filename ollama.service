@@ -6,17 +6,18 @@ After=network-online.target
 ExecStart=/usr/bin/ollama serve
 User=ollama
 Group=ollama
-Restart=always
+Restart=on-failure
 RestartSec=3
+Environment="PATH=$PATH"
 
 # testing restricting the service
-Type=simple
-PrivateTmp=true
-ProtectSystem=full
-ProtectHome=true
-NoNewPrivileges=true
+# Type=simple
+# PrivateTmp=true
+# ProtectSystem=full
+# ProtectHome=true
+# NoNewPrivileges=true
 # https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#private
-PrivateDevices=yes
+# PrivateDevices=yes
 
 [Install]
 WantedBy=default.target
