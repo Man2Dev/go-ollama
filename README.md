@@ -16,6 +16,8 @@ https://github.com/ollama/ollama/tree/main/docs/development.md
 
 
 1. **build:**
+`llm/generate/gen_linux.sh`
+
 ```bash
 git clone --recurse-submodules git@github.com:ollama/ollama.git
 cd ollama
