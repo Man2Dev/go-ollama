@@ -11,6 +11,9 @@ https://github.com/ollama/ollama/tree/main/docs/development.md
 **Build Scripts:**
 `scripts/rh_linux_deps.sh`
 `scripts/env.sh`
+**Install Scripts**
+`https://github.com/ollama/ollama/blob/main/scripts/install.sh`
+
 
 1. **build:**
 ```bash
@@ -40,7 +43,6 @@ sudo systemctl start ollama
 TODO
 
 ```
-
 
 ## Cuda:
 **Note: I will not be doing a cuda build for fedora this are just general instructions**
