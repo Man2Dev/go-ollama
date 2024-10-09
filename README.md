@@ -19,7 +19,7 @@ https://github.com/ollama/ollama/tree/main/docs/development.md
 ```bash
 git clone --recurse-submodules git@github.com:ollama/ollama.git
 cd ollama
-go generate ./...
+OLLAMA_CUSTOM_CPU_DEFS="-DGGML_AVX=off -DGGML_AVX2=off -DGGML_F16C=off -DGGML_FMA=off" go generate ./...
 go build .
 ```
 
