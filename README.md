@@ -197,12 +197,14 @@ find problems with:
 
 - `vulkan/icd.d/nvidia_layers.json`
 
-## patchs
+## Patchs/Fixes
 - ollama has its own patches for llama-cpp:
 https://github.com/ollama/ollama/tree/main/llm/patches
 
 - Remove all 0.0.0.0 interfaces:
 `http://0.0.0.0` `https://0.0.0.0` `http://0.0.0.0:*` `https://0.0.0.0:*`
+    + maybe able to fix with Environment verible:
+    + https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux
 
 ## idea
 - use cmake how to link with lamma-cpp fedora packages
