@@ -186,7 +186,11 @@ ask Tom
     + `https://www.man7.org/linux/man-pages/man5/environment.d.5.html`
 - or with `setenv`
     + https://man7.org/linux/man-pages/man3/setenv.3.html
+    Note:       Check out `rpmconf`
 
+    gidelines:  https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups
+
+    systemd:    https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
 find problems with:
 
 - `libnvidia-vulkan-producer.so`
@@ -219,12 +223,9 @@ https://github.com/ollama/ollama/tree/main/llm/patches
 - use cmake how to link with lamma-cpp fedora packages
 ~~test to see if we can just link `ollama serve` to `llama-cpp-server`.~~
 - remove ssh keys (try to use llama-cpp cilent which will use curl to grab model form Hugging Face)
+    +patching: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_patch_guidelines
 
-    patching: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_patch_guidelines
-
-- patch out auto updaing model functionality as to not connect to the internet without explicit user permission.
+~~- patch out auto updating model functionality as to not connect to the internet without explicit user permission.
 - setup cron for auto update functionality
-
-    https://docs.fedoraproject.org/en-US/packaging-guidelines/#_cron_files
-
-    https://docs.fedoraproject.org/en-US/packaging-guidelines/CronFiles/
+    + https://docs.fedoraproject.org/en-US/packaging-guidelines/#_cron_files
+    + https://docs.fedoraproject.org/en-US/packaging-guidelines/CronFiles/~~
