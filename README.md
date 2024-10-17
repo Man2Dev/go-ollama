@@ -145,12 +145,12 @@ https://github.com/spf13/cobra
         github.com/x448/float16 v0.8.4
         golang.org/x/sync v0.3.0
 
-## how to address model location:
-with xdg portals
+## Address model location:
 
-https://github.com/ollama/ollama/pull/897
-
-https://github.com/ollama/ollama/issues/228
+- store models in `%_sharedstatedir/ollama` instead of `/usr/share/ollama/`
+- look in to `xdg portal` use for Home directory:
+    1. https://github.com/ollama/ollama/pull/897
+    2. https://github.com/ollama/ollama/issues/228
 
 ## support x86_64_{1,2,3,4} cpu generations on llama-cpp
 **mailing list with useful info:**
@@ -206,22 +206,18 @@ https://github.com/ollama/ollama/tree/main/llm/patches
     + maybe able to fix with Environment verible:
     + https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux
 
+## Possible security features:
+- UsersAndGroups: https://docs.fedoraproject.org/en-US/packaging-guidelines/UsersAndGroups/
+- capabilities: https://man7.org/linux/man-pages/man7/capabilities.7.html
+- the systemd service will be isolated to `ollama` wheel group with out breaking functionality (read permission neads to be keapt).
+    + Check out `rpmconf`
+    + gidelines: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups    
+    + systemd: https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
+
+
 ## idea
 - use cmake how to link with lamma-cpp fedora packages
-
-- the systemd service will be isolated to `ollama` wheel group with out breaking functionality (read permission neads to be keapt).
-
-    Note:       Check out `rpmconf`
-
-    gidelines:  https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups    
-
-    systemd:    https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
-
-- store models in `%_sharedstatedir/ollama` instead of `/usr/share/ollama/` (the direcory will also be isolate to the whealgroup).
-
-    UsersAndGroups: https://docs.fedoraproject.org/en-US/packaging-guidelines/UsersAndGroups/
-
-- test to see if we can just link `ollama serve` to `llama-cpp-server`.
+~~test to see if we can just link `ollama serve` to `llama-cpp-server`.~~
 - remove ssh keys (try to use llama-cpp cilent which will use curl to grab model form Hugging Face)
 
     patching: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_patch_guidelines
