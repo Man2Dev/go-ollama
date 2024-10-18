@@ -187,6 +187,9 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
 **NDK**
 - `https://android.googlesource.com/platform/ndk/+/main/sources/android/cpufeatures/cpu-features.h`
 
+**archive ref**
+- `https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md`
+
 **this may help with quantization**
 
 https://github.com/ggerganov/llama.cpp/pull/8713
