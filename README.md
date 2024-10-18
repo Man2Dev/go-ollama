@@ -153,6 +153,10 @@ https://github.com/spf13/cobra
     2. https://github.com/ollama/ollama/issues/228
 
 ## support x86_64_{1,2,3,4} cpu generations on llama-cpp
+**SDL_cpuinfo.h in SDL3 in llama-cpp**
+
+upstream use of `https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_cpuinfo.h`
+
 **mailing list with useful info:**
 
 https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/
