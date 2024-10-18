@@ -177,6 +177,7 @@ ask Tom
 **Vulkan:**
 
 > still in development in llama.cpp
+    - dep `shaderc` REF: 
 
 ** update: May have discovered and reported something potentially useful regarding Vulkan issues.**
 - `https://bugzilla.redhat.com/show_bug.cgi?id=2314042`
