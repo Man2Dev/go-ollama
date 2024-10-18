@@ -177,9 +177,15 @@ dep_option(SDL_LSX                 "Use LSX assembly routines" ON "SDL_ASSEMBLY;
 dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_LOONGARCH64" OFF)
 ```
 
+**at runtime**
+1. `https://github.com/google/cpu_features`
+
 **mailing list with useful info:**
 
-https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/
+- `https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/`
+
+**NDK**
+- `https://android.googlesource.com/platform/ndk/+/main/sources/android/cpufeatures/cpu-features.h`
 
 **this may help with quantization**
 
