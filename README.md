@@ -189,6 +189,7 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
 
 **archive ref**
 - `https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md`
+- `https://github.com/PhilipLudington/poshlib`
 
 **this may help with quantization**
 
