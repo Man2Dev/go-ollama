@@ -4,15 +4,13 @@
 in the v0.3.6 build of ollama relies on a .so file that is linked in /lib however in Fedora x86_64 libraries usually are in /lib64 as such need to be recompiled as to run on fedora.
 
 **Build documentation in:**
-```
-https://github.com/ollama/ollama/tree/main/docs/development.md
-```
+- https://github.com/ollama/ollama/tree/main/docs/development.md
 
 **Build Scripts:**
 `scripts/rh_linux_deps.sh`
 `scripts/env.sh`
 **Install Scripts**
-`https://github.com/ollama/ollama/blob/main/scripts/install.sh`
+- https://github.com/ollama/ollama/blob/main/scripts/install.sh
 
 
 1. **build:**
