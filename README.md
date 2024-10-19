@@ -250,7 +250,7 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
     + systemd:    https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
     + go generation will use https://github.com/ollama/ollama/blob/main/llm/generate/gen_linux.sh
     + scripts:  https://github.com/ollama/ollama/tree/main/scripts
-    + build:    https://github.com/ollama/ollama/tree/main/build/linux
+    + Go runner:    https://github.com/ollama/ollama/blob/main/docs/development.md
 
 ~~test to see if we can just link `ollama serve` to `llama-cpp-server`.~~
 - remove ssh keys (try to use llama-cpp cilent which will use curl to grab model form Hugging Face)
