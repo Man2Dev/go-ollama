@@ -16,8 +16,9 @@ in the v0.3.6 build of ollama relies on a .so file that is linked in /lib howeve
 
 - https://github.com/ollama/ollama/blob/main/scripts/install.sh
 
+## Manual:
+
 1. **build:**
-`llm/generate/gen_linux.sh`
 
 ```bash
 git clone --recurse-submodules git@github.com:ollama/ollama.git
@@ -26,7 +27,7 @@ OLLAMA_CUSTOM_CPU_DEFS="-DGGML_AVX=off -DGGML_AVX2=off -DGGML_F16C=off -DGGML_FM
 go build .
 ```
 
-2. **manual install:**
+2. **install:**
 > Note: assumed that developer is inside local ollama folder.
 ```bash
 # based of https://github.com/ollama/ollama/blob/main/docs/linux.md
@@ -247,6 +248,7 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
     + Check out `rpmconf`
     + gidelines:  https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups
     + systemd:    https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
+    + go generation will use this build script `llm/generate/gen_linux.sh`
 
 ~~test to see if we can just link `ollama serve` to `llama-cpp-server`.~~
 - remove ssh keys (try to use llama-cpp cilent which will use curl to grab model form Hugging Face)
