@@ -257,11 +257,13 @@ https://github.com/ollama/ollama/tree/main/llm/patches
 
 ## idea
 - use cmake how to link with lamma-cpp fedora packages
+
 ~~test to see if we can just link `ollama serve` to `llama-cpp-server`.~~
 - remove ssh keys (try to use llama-cpp cilent which will use curl to grab model form Hugging Face)
     + patching: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_patch_guidelines
 
 ~~- patch out auto updating model functionality as to not connect to the internet without explicit user permission.~~
+
 ~~- setup cron for auto update functionality~~
     ~~+ https://docs.fedoraproject.org/en-US/packaging-guidelines/#_cron_files~~
     ~~+ https://docs.fedoraproject.org/en-US/packaging-guidelines/CronFiles/~~
