@@ -215,7 +215,7 @@ https://github.com/ggerganov/llama.cpp/pull/8713
 - `shaderc` package needed REF: ``
 
 **update: May have discovered and reported something potentially useful regarding Vulkan issues in Fedora.**
-- `https://bugzilla.redhat.com/show_bug.cgi?id=2314042`
+- https://bugzilla.redhat.com/show_bug.cgi?id=2314042
 
 - `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` 
     + with `environment.d`
