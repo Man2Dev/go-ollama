@@ -4,11 +4,16 @@
 in the v0.3.6 build of ollama relies on a .so file that is linked in /lib however in Fedora x86_64 libraries usually are in /lib64 as such need to be recompiled as to run on fedora.
 
 **Build documentation in:**
+
 - https://github.com/ollama/ollama/tree/main/docs/development.md
+
 **Build Scripts:**
+
 - `scripts/rh_linux_deps.sh`
 - `scripts/env.sh`
+
 **Install Scripts**
+
 - https://github.com/ollama/ollama/blob/main/scripts/install.sh
 
 1. **build:**
@@ -36,7 +41,7 @@ sudo usermod -a -G ollama $(whoami)
 ```bash
 sudo echo -e '[Unit]\nDescription=Ollama service\nAfter=network-online.target\n\n[Service]\nExecStart=/usr/bin/ollama serve\nUser=ollama\nGroup=ollama\nRestart=on-failure\nRestartSec=3\n\Environment="PATH=$PATH"n[Install]\nWantedBy=multi-user.target' > /etc/systemd/system/ollama.service
 ```
-# enable and star start service
+# enable and start service
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable ollama
