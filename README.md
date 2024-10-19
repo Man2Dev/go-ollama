@@ -178,7 +178,7 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
 ```
 
 **at runtime**
-1. `https://github.com/google/cpu_features`
+- `https://github.com/google/cpu_features`
 
 **mailing list with useful info:**
 
@@ -204,9 +204,9 @@ https://github.com/ggerganov/llama.cpp/pull/8713
 
 
 ## Hardware Acceleration:
-**Rcom:**
+**Rocm:**
 
-ask Tom
+- Will most likly be in `Fedora 42` thanks to Tom
 
 **Vulkan:**
 
@@ -259,9 +259,9 @@ https://github.com/ollama/ollama/tree/main/llm/patches
 - use cmake how to link with lamma-cpp fedora packages
 ~~test to see if we can just link `ollama serve` to `llama-cpp-server`.~~
 - remove ssh keys (try to use llama-cpp cilent which will use curl to grab model form Hugging Face)
-    +patching: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_patch_guidelines
+    + patching: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_patch_guidelines
 
-~~- patch out auto updating model functionality as to not connect to the internet without explicit user permission.
-- setup cron for auto update functionality
-    + https://docs.fedoraproject.org/en-US/packaging-guidelines/#_cron_files
-    + https://docs.fedoraproject.org/en-US/packaging-guidelines/CronFiles/~~
+~~- patch out auto updating model functionality as to not connect to the internet without explicit user permission.~~
+~~- setup cron for auto update functionality~~
+    ~~+ https://docs.fedoraproject.org/en-US/packaging-guidelines/#_cron_files~~
+    ~~+ https://docs.fedoraproject.org/en-US/packaging-guidelines/CronFiles/~~
