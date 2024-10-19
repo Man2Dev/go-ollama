@@ -213,7 +213,7 @@ ask Tom
 > still in development in llama.cpp
     - dep `shaderc` REF: 
 
-** update: May have discovered and reported something potentially useful regarding Vulkan issues.**
+**update: May have discovered and reported something potentially useful regarding Vulkan issues.**
 - `https://bugzilla.redhat.com/show_bug.cgi?id=2314042`
 
 - `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` 
@@ -244,6 +244,7 @@ https://github.com/ollama/ollama/tree/main/llm/patches
 `http://0.0.0.0` `https://0.0.0.0` `http://0.0.0.0:*` `https://0.0.0.0:*`
     + maybe able to fix with Environment verible:
     + https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux
+    + based on`llama/common.cpp` can be fixed by setting `LLAMA_ARG_HOST` evniroment varible
 
 ## Possible security features:
 - UsersAndGroups: https://docs.fedoraproject.org/en-US/packaging-guidelines/UsersAndGroups/
