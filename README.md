@@ -177,31 +177,30 @@ dep_option(SDL_LSX                 "Use LSX assembly routines" ON "SDL_ASSEMBLY;
 dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_LOONGARCH64" OFF)
 ```
 
-**at runtime**
+## Research on how to support building for multiple cpu generation:
+
+**At runtime:**
 - `https://github.com/google/cpu_features`
 
-**mailing list with useful info:**
-
+**Mailing list with useful info:**
 - `https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/`
 
-**NDK**
+**NDK:**
 - `https://android.googlesource.com/platform/ndk/+/main/sources/android/cpufeatures/cpu-features.h`
 
-**archive ref**
-- `https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md`
-- `https://github.com/PhilipLudington/poshlib`
-
-**this may help with quantization**
-
-https://github.com/ggerganov/llama.cpp/pull/8713
+**Archive reference:**
+1. `https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md`
+2. `https://github.com/PhilipLudington/poshlib`
 
 **important conclusions:**
 1. dnf does support building for multiple cpu generation through --target x86_64_v?
 2. some changes needed to llama-cpp spec
 
-**Ollama builds thenm in differnt directories**
-`ollama/llm/build/linux/amd64/`
+**this may help with quantization:**
+- https://github.com/ggerganov/llama.cpp/pull/8713
 
+**Ollama builds in differnt directories:**
+`ollama/llm/build/linux/amd64/`
 
 ## Hardware Acceleration:
 **Rocm:**
@@ -219,7 +218,7 @@ https://github.com/ggerganov/llama.cpp/pull/8713
 
 - `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` 
     + with `environment.d`
-    + `https://www.man7.org/linux/man-pages/man5/environment.d.5.html`
+    + https://www.man7.org/linux/man-pages/man5/environment.d.5.html
 - or with `setenv`
     + https://man7.org/linux/man-pages/man3/setenv.3.html
     Note:       Check out `rpmconf`
