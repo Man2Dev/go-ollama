@@ -210,10 +210,11 @@ https://github.com/ggerganov/llama.cpp/pull/8713
 
 **Vulkan:**
 
-> still in development in llama.cpp
-    - dep `shaderc` REF: 
+> still in development in llama.cpp too soon to be added
+    
+- `shaderc` package needed REF: ``
 
-**update: May have discovered and reported something potentially useful regarding Vulkan issues.**
+**update: May have discovered and reported something potentially useful regarding Vulkan issues in Fedora.**
 - `https://bugzilla.redhat.com/show_bug.cgi?id=2314042`
 
 - `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` 
