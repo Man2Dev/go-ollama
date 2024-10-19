@@ -76,11 +76,11 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 * then build with `nvidia-container-toolkit` 
 
 ## should ollama's registry be patched out?
-https://registry.ollama.ai/v2/library/{model}/manifests/latest
+- https://registry.ollama.ai/v2/library/{model}/manifests/latest
 
 ## dependencies needed for project
-https://github.com/spf13/cobra
-### go.md packages
+- https://github.com/spf13/cobra
+### go.mod packages
         github.com/bytedance/sonic v1.11.6 // indirect
         github.com/gabriel-vasile/mimetype v1.4.3 // indirect
         github.com/gin-contrib/cors v1.7.2
@@ -152,14 +152,15 @@ https://github.com/spf13/cobra
     1. https://github.com/ollama/ollama/pull/897
     2. https://github.com/ollama/ollama/issues/228
 
-## support x86_64_{1,2,3,4} cpu generations on llama-cpp
-**SDL3 in llama-cpp**
+## support x86_64_{1,2,3,4} cpu generations in `llama-cpp` or other packages:
+1. **SDL3 in llama-cpp**
 
-upstream use of 
-1. `https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_cpuinfo.h`
-2. `https://github.com/libsdl-org/SDL/blob/main/src/cpuinfo/SDL_cpuinfo.c`
+upstream the use of:
+    1. https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_cpuinfo.h
+    2. https://github.com/libsdl-org/SDL/blob/main/src/cpuinfo/SDL_cpuinfo.c
+
+- reference: https://github.com/libsdl-org/SDL/blob/main/CMakeLists.txt
 ```
-# https://github.com/libsdl-org/SDL/blob/main/CMakeLists.txt
 set_option(SDL_ASSEMBLY            "Enable assembly routines" ${SDL_ASSEMBLY_DEFAULT})
 dep_option(SDL_AVX                 "Use AVX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
 dep_option(SDL_AVX2                "Use AVX2 assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
@@ -177,22 +178,20 @@ dep_option(SDL_LSX                 "Use LSX assembly routines" ON "SDL_ASSEMBLY;
 dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_LOONGARCH64" OFF)
 ```
 
-## Research on how to support building for multiple cpu generation:
+2. **At runtime:**
+- https://github.com/google/cpu_features
 
-1. **At runtime:**
-- `https://github.com/google/cpu_features`
+3. **Mailing list with useful info:**
+- https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/
 
-2. **Mailing list with useful info:**
-- `https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/`
+4. **NDK:**
+- https://android.googlesource.com/platform/ndk/+/main/sources/android/cpufeatures/cpu-features.h
 
-3. **NDK:**
-- `https://android.googlesource.com/platform/ndk/+/main/sources/android/cpufeatures/cpu-features.h`
+5. **Archive reference:**
+    1. https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md
+    2. https://github.com/PhilipLudington/poshlib
 
-4. **Archive reference:**
-    1. `https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md`
-    2. `https://github.com/PhilipLudington/poshlib`
-
-5. **important conclusions:**
+6. **important conclusions:**
     1. dnf does support building for multiple cpu generation through --target x86_64_v?
     2. some changes needed to llama-cpp spec
 
@@ -203,60 +202,44 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
 ~~- `ollama/llm/build/linux/amd64/`~~
 
 ## Hardware Acceleration:
-**Rocm:**
-
+1. **Rocm:**
 - Will most likly be in `Fedora 42` thanks to Tom
 
-**Vulkan:**
-
-> still in development in llama.cpp too soon to be added
-    
+2. **Vulkan:**
+- still in development in llama.cpp too soon to be added   
 - `shaderc` package needed REF: ``
 
-**update: May have discovered and reported something potentially useful regarding Vulkan issues in Fedora.**
-- https://bugzilla.redhat.com/show_bug.cgi?id=2314042
+**Vulkan issues in Fedora:**
+    1. https://bugzilla.redhat.com/show_bug.cgi?id=2314042
+    2. Needs `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` 
+        + with `environment.d` https://www.man7.org/linux/man-pages/man5/environment.d.5.html
+        + or with `setenv` https://man7.org/linux/man-pages/man3/setenv.3.html
 
-- `expose "VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json"` 
-    + with `environment.d`
-    + https://www.man7.org/linux/man-pages/man5/environment.d.5.html
-- or with `setenv`
-    + https://man7.org/linux/man-pages/man3/setenv.3.html
-    Note:       Check out `rpmconf`
-
-    gidelines:  https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups
-
-    systemd:    https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
-find problems with:
-
+**find problems with:**
 - `libnvidia-vulkan-producer.so`
-
 - `libnvidia-allocator.so`
-
 - `controlD64`
-
 - `vulkan/icd.d/nvidia_layers.json`
 
-## Patchs/Fixes
-- ollama has its own patches for llama-cpp:
-https://github.com/ollama/ollama/tree/main/llm/patches
-
-- Remove all 0.0.0.0 interfaces:
+## Adding possible security features:
+1. Remove all 0.0.0.0 interfaces:
 `http://0.0.0.0` `https://0.0.0.0` `http://0.0.0.0:*` `https://0.0.0.0:*`
     + maybe able to fix with Environment verible:
     + https://github.com/ollama/ollama/blob/main/docs/faq.md#setting-environment-variables-on-linux
     + based on`llama/common.cpp` can be fixed by setting `LLAMA_ARG_HOST` evniroment varible
-
-## Possible security features:
-- UsersAndGroups: https://docs.fedoraproject.org/en-US/packaging-guidelines/UsersAndGroups/
-- capabilities: https://man7.org/linux/man-pages/man7/capabilities.7.html
-- the systemd service will be isolated to `ollama` wheel group with out breaking functionality (read permission neads to be keapt).
+2. UsersAndGroups: https://docs.fedoraproject.org/en-US/packaging-guidelines/UsersAndGroups/
+3. capabilities: https://man7.org/linux/man-pages/man7/capabilities.7.html
+4. the systemd service will be isolated to `ollama` wheel group with out breaking functionality (read permission neads to be keapt).
     + Check out `rpmconf`
     + gidelines: https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups    
     + systemd: https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
 
-
 ## idea
-- use ollama cmake to link with lamma-cpp-devel cmake
+- use ollama cmake to link with `lamma-cpp-devel` cmake as to build client packages like: `llama-cpp-rpc`, `llama-ccp-server` and custom patches https://github.com/ollama/ollama/tree/main/llm/patches
+- Notes:
+    + Check out `rpmconf`
+    + gidelines:  https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups
+    + systemd:    https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions
 
 ~~test to see if we can just link `ollama serve` to `llama-cpp-server`.~~
 - remove ssh keys (try to use llama-cpp cilent which will use curl to grab model form Hugging Face)
