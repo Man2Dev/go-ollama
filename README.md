@@ -5,13 +5,11 @@ in the v0.3.6 build of ollama relies on a .so file that is linked in /lib howeve
 
 **Build documentation in:**
 - https://github.com/ollama/ollama/tree/main/docs/development.md
-
 **Build Scripts:**
-`scripts/rh_linux_deps.sh`
-`scripts/env.sh`
+- `scripts/rh_linux_deps.sh`
+- `scripts/env.sh`
 **Install Scripts**
 - https://github.com/ollama/ollama/blob/main/scripts/install.sh
-
 
 1. **build:**
 `llm/generate/gen_linux.sh`
@@ -29,18 +27,23 @@ go build .
 # based of https://github.com/ollama/ollama/blob/main/docs/linux.md
 
 # make ollama user
+```bash
 sudo useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
 sudo usermod -a -G ollama $(whoami)
+```
 
 #  write Ollama service
+```bash
 sudo echo -e '[Unit]\nDescription=Ollama service\nAfter=network-online.target\n\n[Service]\nExecStart=/usr/bin/ollama serve\nUser=ollama\nGroup=ollama\nRestart=on-failure\nRestartSec=3\n\Environment="PATH=$PATH"n[Install]\nWantedBy=multi-user.target' > /etc/systemd/system/ollama.service
-
+```
 # enable and star start service
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable ollama
 sudo systemctl start ollama
+```
 
-TODO
+- TODO
 
 ```
 
@@ -154,6 +157,7 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 1. **SDL3 in llama-cpp**
 
 upstream the use of:
+
     1. https://github.com/libsdl-org/SDL/blob/main/include/SDL3/SDL_cpuinfo.h
     2. https://github.com/libsdl-org/SDL/blob/main/src/cpuinfo/SDL_cpuinfo.c
 
