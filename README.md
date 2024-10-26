@@ -91,7 +91,8 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 ## rpm spec info:
 **%{_userunitdir} is used for alreadey build systemd services:**
 
-`rpm --eval %{_userunitdir}`
+- `rpm --eval %{_userunitdir}`
+- e.g. `%{_userunitdir}/ollama.service` 
 
 ## dependencies needed for project
 
