@@ -94,6 +94,10 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 - `rpm --eval %{_userunitdir}`
 - e.g. `%{_userunitdir}/ollama.service` 
 
+**Permissions and ownership**
+- https://rpm-software-management.github.io/rpm/manual/spec.html#files-section
+- https://rpm-software-management.github.io/rpm/manual/users_and_groups.html
+
 ## dependencies needed for project
 
 - <https://github.com/spf13/cobra>
