@@ -220,6 +220,7 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
     1.  dnf does support building for multiple cpu generation through --target
         x86_64_v?
     2.  some changes needed to llama-cpp spec
+    3.  Possibly [Runtime scriptlet expansion] (https://rpm-software-management.github.io/rpm/manual/scriptlet_expansion.html)
 
 **~~this may help with quantization:**~~ ~~- 
 <https://github.com/ggerganov/llama.cpp/pull/8713>~~
