@@ -94,10 +94,15 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 - `rpm --eval %{_userunitdir}`
 - e.g. `%{_userunitdir}/ollama.service` 
 
-**Permissions and ownership**
+**Permissions and Ownership / Users and Groups**
+
 - https://rpm-software-management.github.io/rpm/manual/spec.html#files-section
 - https://rpm-software-management.github.io/rpm/manual/users_and_groups.html
-    + https://www.freedesktop.org/software/systemd/man/latest/sysusers.d.html
+### Additional documentation:
+    + [Fedora user & group] (https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups)
+    + [Fedora systemd] (https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions)
+    + [systemd sysusers.d] (https://www.freedesktop.org/software/systemd/man/latest/sysusers.d.html)
+    + [systemd dynamic users] (https://0pointer.net/blog/dynamic-users-with-systemd.html)
 
 ## dependencies needed for project
 
@@ -284,10 +289,6 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
   <https://github.com/ollama/ollama/tree/main/llm/patches>
 - Notes:
   + Check out rpmconf
-  + gidelines: 
-    https://docs.fedoraproject.org/en-US/packaging-guidelines/#_users_and_groups
-  + systemd:    
-    <https://docs.fedoraproject.org/en-US/packaging-guidelines/Systemd/#definitions>
   + go generation will use 
     <https://github.com/ollama/ollama/blob/main/llm/generate/gen_linux.sh>
   + scripts:  <https://github.com/ollama/ollama/tree/main/scripts>
