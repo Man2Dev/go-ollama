@@ -97,6 +97,7 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 **Permissions and ownership**
 - https://rpm-software-management.github.io/rpm/manual/spec.html#files-section
 - https://rpm-software-management.github.io/rpm/manual/users_and_groups.html
+    + https://www.freedesktop.org/software/systemd/man/latest/sysusers.d.html
 
 ## dependencies needed for project
 
