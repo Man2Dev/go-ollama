@@ -1,4 +1,14 @@
 # go
 https://src.fedoraproject.org/rpms/syncthing
+
+# one way of install systemd service (manual)
+# install systemd units
+```bash
+mkdir -p %{buildroot}/%{_unitdir}
+mkdir -p %{buildroot}/%{_userunitdir}
+
+cp -pav etc/linux-systemd/system/syncthing@.service %{buildroot}/%{_unitdir}/
+cp -pav etc/linux-systemd/user/syncthing.service %{buildroot}/%{_userunitdir}/
+```
 # c
 https://src.fedoraproject.org/rpms/glibc
