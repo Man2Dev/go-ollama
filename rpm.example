@@ -1,5 +1,6 @@
 # go
 https://src.fedoraproject.org/rpms/syncthing
+https://src.fedoraproject.org/rpms/golang-github-nvidia-container-toolkit
 
 # one way of install systemd service (manual)
 # install systemd units
