@@ -191,7 +191,7 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 
 2. **Architecture-specific support.  Internal.  Do not use directly.**
     - found in `/usr/lib/rpm/redhat/macros` in `RPM 4.20.0`/`f41>=`
-
+    - 
 ```rpmspec
 %__cflags_arch_x86_64_level %[0%{?rhel} == 9 ? "-v2" : ""]%[0%{?rhel} > 9 ? "-v3" : ""]
 %__cflags_arch_x86_64 -march=x86-64%{?__cflags_arch_x86_64_level:%{__cflags_arch_x86_64_level}}
@@ -250,10 +250,16 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
     2.  some changes needed to llama-cpp spec
     3.  Possibly [Runtime scriptlet expansion] (https://rpm-software-management.github.io/rpm/manual/scriptlet_expansion.html)
 
-**~~this may help with quantization:**~~ ~~- 
-<https://github.com/ggerganov/llama.cpp/pull/8713>~~
+~~**this may help with quantization:**~~
 
-**~~Ollama builds in differnt directories:**~~ ~~- ~~ollama/llm/build/linux/amd64/
+~~<https://github.com/ggerganov/llama.cpp/pull/8713>~~
+
+~~**Ollama builds in differnt directories:**~~
+
+~~ollama/llm/build/linux/amd64/~~
+
+## rpm access control
+    - https://rpm-software-management.github.io/rpm/manual/lua.html#posix-extension
 
 ## Hardware Acceleration:
 
