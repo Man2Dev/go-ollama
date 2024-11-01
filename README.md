@@ -189,7 +189,23 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 1. **Dynamic Spec Generation**
     - https://rpm-software-management.github.io/rpm/manual/dynamic_specs.html
 
-2.  **SDL3 in llama-cpp**
+2. **Architecture-specific support.  Internal.  Do not use directly.**
+    - found in `/usr/lib/rpm/redhat/macros` in `RPM 4.20.0`/`f41>=`
+
+```rpmspec
+%__cflags_arch_x86_64_level %[0%{?rhel} == 9 ? "-v2" : ""]%[0%{?rhel} > 9 ? "-v3" : ""]
+%__cflags_arch_x86_64 -march=x86-64%{?__cflags_arch_x86_64_level:%{__cflags_arch_x86_64_level}}
+
+# -mtls-dialect=gnu2 is currently specific to GCC (#2263181).
+%__cflags_arch_x86_64_common -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection %[ "%{toolchain}" == "gcc" ? "-mtls-dialect=gnu2 " : "" ]%{_frame_pointers_cflags} %{_frame_pointers_cflags_x86_64}
+
+# Also used for s390.
+%__cflags_arch_s390x %[0%{?rhel} >= 9 ? "-march=z14 -mtune=z15" : "-march=z13 -mtune=z14"]
+
+%__cflags_arch_ppc64le %[0%{?rhel} >= 9 ? "-mcpu=power9 -mtune=power9" : "-mcpu=power8 -mtune=power8"]
+```
+
+3.  **SDL3 in llama-cpp**
 
 upstream the use of:
 
@@ -217,18 +233,18 @@ dep_option(SDL_LSX                 "Use LSX assembly routines" ON "SDL_ASSEMBLY;
 dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_LOONGARCH64" OFF)
 
 ```
-3.  **At runtime:**
+4.  **At runtime:**
 - <https://github.com/google/cpu_features>
-4.  **Mailing list with useful info:**
+5.  **Mailing list with useful info:**
 - 
   https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/
-5.  **NDK:**
+6.  **NDK:**
 - 
   https://android.googlesource.com/platform/ndk/+/main/sources/android/cpufeatures/cpu-features.h
-6.  **Archive reference:**
+7.  **Archive reference:**
     1.  <https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md>
     2.  <https://github.com/PhilipLudington/poshlib>
-7.  **important conclusions:**
+8.  **important conclusions:**
     1.  dnf does support building for multiple cpu generation through --target
         x86_64_v?
     2.  some changes needed to llama-cpp spec
