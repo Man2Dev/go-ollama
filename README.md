@@ -186,7 +186,10 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 
 ## support x86_64_{1,2,3,4} cpu generations in llama-cpp or other packages:
 
-1.  **SDL3 in llama-cpp**
+1. **Dynamic Spec Generation**
+    - https://rpm-software-management.github.io/rpm/manual/dynamic_specs.html
+
+2.  **SDL3 in llama-cpp**
 
 upstream the use of:
 
@@ -214,19 +217,18 @@ dep_option(SDL_LSX                 "Use LSX assembly routines" ON "SDL_ASSEMBLY;
 dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_LOONGARCH64" OFF)
 
 ```
-2.  **At runtime:**
+3.  **At runtime:**
 - <https://github.com/google/cpu_features>
-3.  **Mailing list with useful info:**
+4.  **Mailing list with useful info:**
 - 
   https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/EA6Y5AUE5DQ4WTD225L4UYMVXFTTK5UV/
-4.  **NDK:**
+5.  **NDK:**
 - 
   https://android.googlesource.com/platform/ndk/+/main/sources/android/cpufeatures/cpu-features.h
-5.  **Archive reference:**
-    1.  
-        <https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md>
+6.  **Archive reference:**
+    1.  <https://github.com/intel/sgx-cpu-feature-detection/blob/master/README.md>
     2.  <https://github.com/PhilipLudington/poshlib>
-6.  **important conclusions:**
+7.  **important conclusions:**
     1.  dnf does support building for multiple cpu generation through --target
         x86_64_v?
     2.  some changes needed to llama-cpp spec
