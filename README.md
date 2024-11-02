@@ -184,7 +184,7 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
     1.  <https://github.com/ollama/ollama/pull/897>
     2.  <https://github.com/ollama/ollama/issues/228>
 
-## support x86_64_{1,2,3,4} cpu generations in llama-cpp or other packages:
+## support x86_64-v{1,2,3,4} cpu generations in llama-cpp or other packages:
 
 1. **Dynamic Spec Generation**
     - https://rpm-software-management.github.io/rpm/manual/dynamic_specs.html
