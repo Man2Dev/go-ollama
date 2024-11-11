@@ -89,7 +89,7 @@ https://gitlab.com/nvidia/container-images/cuda/-/tree/master/dist
 * then build with `nvidia-container-toolkit`
 
 ## rpm spec info:
-**%{_userunitdir} is used for alreadey build systemd services:**
+**%{_userunitdir} & %{_unitdir} is used for alreadey build systemd services:**
 
 - `rpm --eval %{_userunitdir}`
 - e.g. `%{_userunitdir}/ollama.service` 
