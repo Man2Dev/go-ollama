@@ -12,7 +12,7 @@
 
 # https://github.com/ollama/ollama
 %global goipath         github.com/ollama/ollama
-Version:                0.4.0-rc6
+Version:                0.4.1-rc0
 
 %gometa -L -f
 
@@ -29,7 +29,7 @@ Name:           ollama
 Release:        %autorelease
 Summary:        Get up and running with Llama 3.2, Mistral, Gemma 2, and other large language models
 
-License:        MIT AND Apache-2.0
+License:        Apache-2.0 AND MIT
 URL:            %{gourl}
 Source:         %{gosource}
 
