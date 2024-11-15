@@ -25,6 +25,7 @@ models.}
                         app/README.md integration/README.md llama/README.md\\\
                         llama/runner/README.md macapp/README.md
 
+source0:	ollama.service
 Name:           ollama
 Release:        %autorelease
 Summary:        Get up and running with Llama 3.2, Mistral, Gemma 2, and other large language models
@@ -58,6 +59,10 @@ done
 %endif
 
 %install
+sudo useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
+sudo usermod -a -G ollama $(whoami)
+install -D -p -m 0644 %{SOURCE0} %{buildroot}%_unitdir/ollama.service
+
 %gopkginstall
 %if %{without bootstrap}
 install -m 0755 -vd                     %{buildroot}%{_bindir}

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 [Unit]
 Description=Ollama service
 After=network-online.target
@@ -16,4 +18,3 @@ Environment="OLLAMA_SCHED_SPREAD=true"
 
 [Install]
 WantedBy=default.target
-
