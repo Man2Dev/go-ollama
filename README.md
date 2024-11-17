@@ -214,6 +214,15 @@ upstream the use of:
 
 - reference: <https://github.com/libsdl-org/SDL/blob/main/CMakeLists.txt>
 
+4. **Fedora ENL**
+
+ELN allows us to explore new ideas like a higher baseline for CPU architectures in a way that will not disrupt the rest of Fedora.
+
+- https://docs.fedoraproject.org/en-US/eln
+- https://docs.fedoraproject.org/en-US/eln/buildroot
+- https://fedoraproject.org/wiki/Changes/Additional_buildroot_to_test_x86-64_micro-architecture_update
+- https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/3Z5SMF6CPL3MK2CNYPUW4OZYMA6TZJBN/#MKXPMQOZNLECPPWRM6UBUMR2WHVG5DL6
+- https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/IFBHS2WKKPKJH6H54OX4DV3U7A4XYOPU/#LUWYM7CBG5LVB2MFPO3R3JQEBFCPYPLK
 
 ```
 set_option(SDL_ASSEMBLY            "Enable assembly routines" ${SDL_ASSEMBLY_DEFAULT})
