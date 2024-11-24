@@ -259,6 +259,13 @@ dep_option(SDL_LASX                "Use LASX assembly routines" ON "SDL_ASSEMBLY
     2.  some changes needed to llama-cpp spec
     3.  Possibly [Runtime scriptlet expansion] (https://rpm-software-management.github.io/rpm/manual/scriptlet_expansion.html)
 
+## notes:
+get cpu features:
+
+```bash
+cat /proc/cpuinfo | grep flags | head -1
+```
+
 ~~**this may help with quantization:**~~
 
 ~~<https://github.com/ggerganov/llama.cpp/pull/8713>~~
