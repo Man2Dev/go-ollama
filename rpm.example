@@ -26,3 +26,4 @@ cp -pav etc/linux-systemd/user/syncthing.service %{buildroot}/%{_userunitdir}/
 # c
 https://src.fedoraproject.org/rpms/glibc
 https://pagure.io/glibc-maintainer-scripts
+https://src.fedoraproject.org/rpms/nagios
