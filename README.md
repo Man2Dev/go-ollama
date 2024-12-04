@@ -224,6 +224,11 @@ ELN allows us to explore new ideas like a higher baseline for CPU architectures 
 - https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/3Z5SMF6CPL3MK2CNYPUW4OZYMA6TZJBN/#MKXPMQOZNLECPPWRM6UBUMR2WHVG5DL6
 - https://lists.fedoraproject.org/archives/list/devel@lists.fedoraproject.org/thread/IFBHS2WKKPKJH6H54OX4DV3U7A4XYOPU/#LUWYM7CBG5LVB2MFPO3R3JQEBFCPYPLK
 
+5. **gnu**
+
+- https://sourceware.org/legacy-ml/gnu-gabi/2016-q4/msg00000.html
+    + found on https://fedoraproject.org/wiki/Toolchain/Watermark
+
 ```
 set_option(SDL_ASSEMBLY            "Enable assembly routines" ${SDL_ASSEMBLY_DEFAULT})
 dep_option(SDL_AVX                 "Use AVX assembly routines" ON "SDL_ASSEMBLY;SDL_CPU_X86 OR SDL_CPU_X64" OFF)
