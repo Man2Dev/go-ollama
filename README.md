@@ -228,6 +228,7 @@ ELN allows us to explore new ideas like a higher baseline for CPU architectures 
 
 - https://sourceware.org/legacy-ml/gnu-gabi/2016-q4/msg00000.html
     + found on https://fedoraproject.org/wiki/Toolchain/Watermark
+- gcc build flags https://src.fedoraproject.org/rpms/redhat-rpm-config//blob/rawhide/f/buildflags.md
 
 ```
 set_option(SDL_ASSEMBLY            "Enable assembly routines" ${SDL_ASSEMBLY_DEFAULT})
